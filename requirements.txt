@@ -36,6 +36,7 @@ networkx==3.3
 numpy==1.26.4
 packaging==24.1
 pandas==2.2.2
+plotly==5.24.0
 preshed==3.0.9
 psutil==6.0.0
 pyarrow==17.0.0
@@ -59,6 +60,7 @@ spacy-legacy==3.0.12
 spacy-loggers==1.0.5
 srsly==2.4.8
 sympy==1.13.2
+tenacity==9.0.0
 thinc==8.2.5
 tokenizers==0.19.1
 torch==2.4.1
