@@ -7,7 +7,8 @@ São utilizados os pacotes:
 - "pysentimiento" (para predição de sentimentos em pt-br)
 - "plotly" (para geração de gráficos)
 - "nltk" (para as 'stop words')
-- 'wordcloud' (para geração de uma 'nuvem' de palavras mais frequentes)
+- "wordcloud" (para geração de uma 'nuvem' de palavras mais frequentes)
+- "liqfit" (alternativa ao 'zero-shot-classification' pipeline, para textos em pt-br)
 - Comandos:
   - "pip install transformers"
   - "pip install torch"
@@ -15,5 +16,6 @@ São utilizados os pacotes:
   - "pip install plotly"
   - "pip install nltk"
   - "pip install wordcloud"
+  - "pip install liqfit sentencepiece"
 
 O arquivo 'requirements.txt' possui todas as dependências de pacotes para a execução da aplicação. 
