@@ -10,6 +10,7 @@ São utilizados os pacotes:
 - "wordcloud" (para geração de uma 'nuvem' de palavras mais frequentes)
 - "liqfit" (alternativa ao 'zero-shot-classification' pipeline, para textos em pt-br)
 - "scikit-image"
+- "torchvision"
 - Comandos:
   - "pip install transformers"
   - "pip install torch"
@@ -19,5 +20,6 @@ São utilizados os pacotes:
   - "pip install wordcloud"
   - "pip install liqfit sentencepiece"
   - "pip install scikit-image"
+  - "pip install torchvision"
 
 O arquivo 'requirements.txt' possui todas as dependências de pacotes para a execução da aplicação. 
