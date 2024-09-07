@@ -3,20 +3,23 @@ from transformers import pipeline
 
 
 class BackgroundRemoval:
-	def __init__(self, image_path: str):
-		self.pipe = (
-			pipeline("image-segmentation", model="briaai/RMBG-1.4", trust_remote_code=True))
-		self.pillow_mask = self.pipe(image_path, return_mask=True)
-		self.pillow_image = self.pipe(image_path)
+	def __init__(self):
+		self.pipe = pipeline("image-segmentation", model="briaai/RMBG-1.4", trust_remote_code=True)
+		self.pillow_mask = ''
 
-	def get_pillow_image(self):
-		return self.pillow_image
+	def remove_background(self, image):
+		self.pillow_mask = self.pipe(image, return_mask=True)
 
-	def show_image(self):
+		# Aplicar máscara na imagem original
+		pillow_image = self.pipe(image)
+
+		return pillow_image
+
+	def show_image(self, image):
 		"""
 			Opens the clean image in a pop-up
 		"""
-		image = self.get_pillow_image()
+		image = self.remove_background(image)
 		if isinstance(image, Image.Image):
 			image.show()
 		else:
