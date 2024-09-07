@@ -9,6 +9,7 @@ São utilizados os pacotes:
 - "nltk" (para as 'stop words')
 - "wordcloud" (para geração de uma 'nuvem' de palavras mais frequentes)
 - "liqfit" (alternativa ao 'zero-shot-classification' pipeline, para textos em pt-br)
+- "scikit-image"
 - Comandos:
   - "pip install transformers"
   - "pip install torch"
@@ -17,5 +18,6 @@ São utilizados os pacotes:
   - "pip install nltk"
   - "pip install wordcloud"
   - "pip install liqfit sentencepiece"
+  - "pip install scikit-image"
 
 O arquivo 'requirements.txt' possui todas as dependências de pacotes para a execução da aplicação. 
