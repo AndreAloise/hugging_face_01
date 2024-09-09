@@ -3,12 +3,15 @@ from pandas import DataFrame
 from ia_models.background_removal import BackgroundRemoval
 from ia_models.category_classifier import CategoryClassifier
 from ia_models.category_classifier_br import CategoryClassifierBr
+from ia_models.chat_bot_medium import ChatBotMedium
 from ia_models.faq_question_answer import FaqQuestionAnswer
 from ia_models.sentiment_classifier import SentimentClassifier
 from ia_models.sentiment_classifier_br import SentimentClassifierBr
 from interface_views.background_removal_view import BackgroundRemovalView
+from interface_views.chat_bot_medium_view import ChatBotMediumView
 from interface_views.faq_question_answer_view import FaqQuestionAnswerView
 from services.category_classifier_br_service import CategoryClassifierBrService
+from services.chat_bot_medium_service import ChatBotMediumService
 from services.cloud_words_service import CloudWordsService
 from services.sentiment_classifier_br_service import SentimentClassifierBrService
 
@@ -123,6 +126,27 @@ def create_faq_view():
 	view.create_gradio_interface()
 
 
+def chat_bot():
+	bot = ChatBotMedium()
+	dados_pedidos = {
+		"numero_pedido": ["12345", "67890", "11121", "22232"],
+		"status": ["Shipped", "Processing", "Delivered", "Cancelled"]
+	}
+	service = ChatBotMediumService(dados_pedidos, bot)
+	service.start_chat_bot(bot)
+
+
+def create_chat_bot_view():
+	bot = ChatBotMedium()
+	dados_pedidos = {
+		"numero_pedido": ["12345", "67890", "11121", "22232"],
+		"status": ["Shipped", "Processing", "Delivered", "Cancelled"]
+	}
+	service = ChatBotMediumService(dados_pedidos, bot)
+	view = ChatBotMediumView(service)
+	view.create_gradio_interface()
+
+
 if __name__ == '__main__':
 	# sentiment_data = _get_sentiment_prediction_from_csv()
 	# execute_ia_classifier()
@@ -135,4 +159,6 @@ if __name__ == '__main__':
 	# add_category_to_data()
 	# get_cleaned_image()
 	# create_image_view()
-	create_faq_view()
+	# create_faq_view()
+	# chat_bot()
+	create_chat_bot_view()
